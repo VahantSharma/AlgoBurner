@@ -1,5 +1,7 @@
 // LeetCode Stats API service
-const LEETCODE_API_BASE_URL = import.meta.env.VITE_LEETCODE_API_BASE_URL || 'https://leetcode-stats-api.herokuapp.com';
+const LEETCODE_API_BASE_URL =
+  import.meta.env.VITE_LEETCODE_API_BASE_URL ||
+  "https://leetcode-stats-api.herokuapp.com";
 const API_TIMEOUT = Number(import.meta.env.VITE_LEETCODE_API_TIMEOUT) || 10000;
 
 export interface LeetCodeAPIResponse {
@@ -36,34 +38,36 @@ export class LeetCodeService {
       // Create an AbortController for timeout
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT);
-      
+
       const response = await fetch(`${LEETCODE_API_BASE_URL}/${username}`, {
         signal: controller.signal,
         headers: {
-          'Accept': 'application/json',
+          Accept: "application/json",
         },
       });
-      
+
       clearTimeout(timeoutId);
-      
+
       if (!response.ok) {
         if (response.status === 404) {
-          throw new Error('User not found. Please check the username and try again.');
+          throw new Error(
+            "User not found. Please check the username and try again."
+          );
         }
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       const data: LeetCodeAPIResponse = await response.json();
-      
-      if (data.status === 'error') {
-        throw new Error(data.message || 'Failed to fetch user data');
+
+      if (data.status === "error") {
+        throw new Error(data.message || "Failed to fetch user data");
       }
-      
+
       // Validate required fields
-      if (typeof data.totalSolved !== 'number' || data.totalSolved < 0) {
-        throw new Error('Invalid data received from API');
+      if (typeof data.totalSolved !== "number" || data.totalSolved < 0) {
+        throw new Error("Invalid data received from API");
       }
-      
+
       // Transform API response to our internal format
       return {
         totalSolved: data.totalSolved,
@@ -78,26 +82,32 @@ export class LeetCodeService {
         totalHard: data.totalHard,
       };
     } catch (error) {
-      console.error('Error fetching LeetCode stats:', error);
-      
+      console.error("Error fetching LeetCode stats:", error);
+
       // Handle specific error cases
       if (error instanceof Error) {
-        if (error.name === 'AbortError') {
-          throw new Error('Request timed out. Please try again.');
+        if (error.name === "AbortError") {
+          throw new Error("Request timed out. Please try again.");
         }
-        if (error.message.includes('404')) {
-          throw new Error('User not found. Please check the username and try again.');
+        if (error.message.includes("404")) {
+          throw new Error(
+            "User not found. Please check the username and try again."
+          );
         }
-        if (error.message.includes('Failed to fetch')) {
-          throw new Error('Network error. Please check your internet connection and try again.');
+        if (error.message.includes("Failed to fetch")) {
+          throw new Error(
+            "Network error. Please check your internet connection and try again."
+          );
         }
         throw error;
       }
-      
-      throw new Error('An unexpected error occurred while fetching your stats.');
+
+      throw new Error(
+        "An unexpected error occurred while fetching your stats."
+      );
     }
   }
-  
+
   // Fallback mock data for development/testing
   static getMockStats(): LeetCodeStats {
     return {

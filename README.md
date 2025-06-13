@@ -76,6 +76,7 @@ The built files will be in the `dist` directory.
 ## 🔌 API Integration
 
 This project uses the **LeetCode Stats API** to fetch real user data:
+
 - **Endpoint**: `https://leetcode-stats-api.herokuapp.com/{username}`
 - **Data**: Total solved, difficulty breakdown, acceptance rate, ranking, etc.
 - **Error Handling**: Graceful fallback for API failures or invalid usernames
@@ -83,6 +84,7 @@ This project uses the **LeetCode Stats API** to fetch real user data:
 ## 🎮 Try It Out
 
 Want to test the app? Try these usernames:
+
 - `leetcode` - LeetCode's official account
 - `your-username` - Enter your own LeetCode username!
 

@@ -1,15 +1,17 @@
-
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import React, { useState } from "react";
 
 interface UsernameFormProps {
   onSubmit: (username: string) => void;
   isLoading: boolean;
 }
 
-export const UsernameForm: React.FC<UsernameFormProps> = ({ onSubmit, isLoading }) => {
-  const [username, setUsername] = useState('');
+export const UsernameForm: React.FC<UsernameFormProps> = ({
+  onSubmit,
+  isLoading,
+}) => {
+  const [username, setUsername] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,7 +20,8 @@ export const UsernameForm: React.FC<UsernameFormProps> = ({ onSubmit, isLoading 
     }
   };
 
-  return (    <div className="max-w-md mx-auto">
+  return (
+    <div className="max-w-md mx-auto">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <Input
@@ -33,7 +36,7 @@ export const UsernameForm: React.FC<UsernameFormProps> = ({ onSubmit, isLoading 
             Enter your exact LeetCode username to get your real stats roasted!
           </p>
         </div>
-        
+
         <Button
           type="submit"
           disabled={isLoading || !username.trim()}

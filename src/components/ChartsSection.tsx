@@ -1,8 +1,7 @@
-
-import React from 'react';
-import { AcceptanceChart } from './AcceptanceChart';
-import { DifficultyChart } from './DifficultyChart';
-import { LeetCodeStats } from '@/services/leetcodeService';
+import { LeetCodeStats } from "@/services/leetcodeService";
+import React from "react";
+import { AcceptanceChart } from "./AcceptanceChart";
+import { DifficultyChart } from "./DifficultyChart";
 
 interface ChartsSectionProps {
   stats: LeetCodeStats;
@@ -17,7 +16,7 @@ export const ChartsSection: React.FC<ChartsSectionProps> = ({ stats }) => {
         </h3>
         <AcceptanceChart acceptanceRate={stats.acceptanceRate} />
       </div>
-      
+
       <div className="bg-[#161b22] border border-slate-700 rounded-lg p-6 shadow-xl">
         <h3 className="text-xl font-semibold text-slate-200 mb-6 text-center">
           Problem Difficulty Distribution

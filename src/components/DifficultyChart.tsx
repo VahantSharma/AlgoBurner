@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { LeetCodeStats } from '@/services/leetcodeService';
+import { LeetCodeStats } from "@/services/leetcodeService";
+import React from "react";
 
 interface DifficultyChartProps {
   stats: LeetCodeStats;
@@ -53,7 +52,7 @@ export const DifficultyChart: React.FC<DifficultyChartProps> = ({ stats }) => {
           <span className="text-xl font-bold text-white">{total}</span>
         </div>
       </div>
-      
+
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center">

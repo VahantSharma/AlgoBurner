@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2025-06-14
 
 ### Added
+
 - 🚀 **Real LeetCode API Integration**: Now fetches actual user statistics from LeetCode Stats API
 - 🔧 **Enhanced Error Handling**: Graceful handling of API failures, timeouts, and invalid usernames
 - ⚡ **Request Timeout**: 10-second timeout for API requests with proper error messages
@@ -17,12 +18,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🌐 **Environment Configuration**: Configurable API endpoints via environment variables
 
 ### Changed
+
 - 🎨 **Enhanced Roast Messages**: More diverse and data-driven roasts based on real stats
 - 📝 **Improved User Guidance**: Better form placeholders and error messages
 - 🔄 **Loading States**: Updated loading messages to reflect real API calls
 - 📚 **Documentation**: Updated README with API integration details and testing guide
 
 ### Technical
+
 - 🏗️ **Service Architecture**: Clean separation of API logic into dedicated service
 - 🔒 **Type Safety**: Comprehensive TypeScript interfaces for API responses
 - 🚀 **Performance**: Optimized API calls with proper timeout handling
@@ -31,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-06-14
 
 ### Added
+
 - Initial release of AlgoBurner 🔥
 - LeetCode username input form with validation
 - Mock data generation for demonstration purposes
