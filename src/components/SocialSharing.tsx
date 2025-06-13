@@ -11,11 +11,12 @@ export const SocialSharing: React.FC<SocialSharingProps> = ({
   username,
   roastMessage,
 }) => {
-  const shareText = `Just got roasted by AlgoBurner 🔥 "${roastMessage}" - Check out your own LeetCode roast at https://github.com/VahantSharma/AlgoBurner`;
+  const appUrl = window.location.origin; // Will use current domain (Vercel URL or localhost)
+  const shareText = `Just got roasted by AlgoBurner 🔥 "${roastMessage}" - Check out your own LeetCode roast at ${appUrl}`;
 
   const shareToLinkedIn = () => {
     const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-      "https://github.com/VahantSharma/AlgoBurner"
+      appUrl
     )}&summary=${encodeURIComponent(shareText)}`;
     window.open(url, "_blank", "width=600,height=400");
   };

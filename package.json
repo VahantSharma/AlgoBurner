@@ -21,10 +21,16 @@
     "typescript",
     "vite",
     "tailwind",
-    "coding-interview"
+    "coding-interview",
+    "vercel",
+    "webapp"
   ],
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
