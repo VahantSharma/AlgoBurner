@@ -6,9 +6,10 @@ AlgoBurner is a fun web application that takes your LeetCode username and serves
 
 ## 🚀 Features
 
-- **LeetCode Stats Integration**: Enter your username to get your stats analyzed
-- **Savage Roasts**: Get hilariously roasted based on your performance
+- **Real LeetCode API Integration**: Fetches actual user statistics from LeetCode
+- **Savage Roasts**: Get hilariously roasted based on your real performance
 - **Beautiful Charts**: Visualize your problem-solving statistics
+- **Error Handling**: Graceful handling of API failures and invalid usernames
 - **Social Sharing**: Share your roast on LinkedIn and Twitter
 - **Responsive Design**: Looks great on all devices
 - **Dark Theme**: Easy on the eyes, hard on your ego
@@ -67,10 +68,25 @@ The built files will be in the `dist` directory.
 ## 🎯 How It Works
 
 1. **Enter Username**: Input your LeetCode username
-2. **Get Analyzed**: The app fetches your problem-solving statistics
-3. **Get Roasted**: Receive a humorous roast based on your performance
-4. **View Charts**: See beautiful visualizations of your stats
+2. **API Fetch**: The app fetches your real statistics from LeetCode via the [LeetCode Stats API](https://leetcode-stats-api.herokuapp.com)
+3. **Get Roasted**: Receive a humorous roast based on your actual performance
+4. **View Charts**: See beautiful visualizations of your real stats
 5. **Share**: Post your roast on social media if you dare!
+
+## 🔌 API Integration
+
+This project uses the **LeetCode Stats API** to fetch real user data:
+- **Endpoint**: `https://leetcode-stats-api.herokuapp.com/{username}`
+- **Data**: Total solved, difficulty breakdown, acceptance rate, ranking, etc.
+- **Error Handling**: Graceful fallback for API failures or invalid usernames
+
+## 🎮 Try It Out
+
+Want to test the app? Try these usernames:
+- `leetcode` - LeetCode's official account
+- `your-username` - Enter your own LeetCode username!
+
+**Note**: Make sure your LeetCode profile is public for the API to fetch your stats.
 
 ## 🤝 Contributing
 

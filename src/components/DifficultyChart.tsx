@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { LeetCodeStats } from '@/pages/Index';
+import { LeetCodeStats } from '@/services/leetcodeService';
 
 interface DifficultyChartProps {
   stats: LeetCodeStats;

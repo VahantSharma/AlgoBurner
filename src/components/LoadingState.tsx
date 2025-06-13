@@ -10,12 +10,11 @@ export const LoadingState = () => {
         <div className="absolute inset-0 w-16 h-16 mx-auto">
           <div className="w-16 h-16 border-4 border-orange-500/20 border-t-orange-500 rounded-full animate-spin" />
         </div>
-      </div>
-      <p className="mt-6 text-xl text-slate-300">
-        Preparing your roast...
+      </div>      <p className="mt-6 text-xl text-slate-300">
+        Fetching your LeetCode stats...
       </p>
       <p className="mt-2 text-slate-500">
-        This might sting a little
+        Preparing your roast - this might sting a little
       </p>
     </div>
   );

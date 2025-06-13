@@ -1,8 +1,8 @@
 {
   "name": "algoburner",
   "private": false,
-  "version": "1.0.0",
-  "description": "The ultimate LeetCode statistics roaster - Because your coding stats deserve the brutal truth!",
+  "version": "1.1.0",
+  "description": "The ultimate LeetCode statistics roaster with real API integration - Because your coding stats deserve the brutal truth!",
   "author": {
     "name": "Vahant Sharma",
     "email": "contact@vahantsharma.dev",

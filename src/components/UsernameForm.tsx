@@ -18,18 +18,20 @@ export const UsernameForm: React.FC<UsernameFormProps> = ({ onSubmit, isLoading 
     }
   };
 
-  return (
-    <div className="max-w-md mx-auto">
+  return (    <div className="max-w-md mx-auto">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <Input
             type="text"
-            placeholder="Enter LeetCode username"
+            placeholder="Enter LeetCode username (e.g., johndoe)"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="w-full h-14 text-lg bg-[#161b22] border-slate-600 text-white placeholder-slate-400 focus:border-blue-500 focus:ring-blue-500/20"
             disabled={isLoading}
           />
+          <p className="mt-2 text-xs text-slate-500 text-center">
+            Enter your exact LeetCode username to get your real stats roasted!
+          </p>
         </div>
         
         <Button
@@ -40,10 +42,10 @@ export const UsernameForm: React.FC<UsernameFormProps> = ({ onSubmit, isLoading 
           {isLoading ? (
             <div className="flex items-center">
               <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-              Burning...
+              Fetching & Burning...
             </div>
           ) : (
-            <>🔥 Burn Me</>
+            <>🔥 Roast My Stats</>
           )}
         </Button>
       </form>

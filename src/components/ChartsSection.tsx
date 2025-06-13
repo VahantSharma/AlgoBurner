@@ -2,7 +2,7 @@
 import React from 'react';
 import { AcceptanceChart } from './AcceptanceChart';
 import { DifficultyChart } from './DifficultyChart';
-import { LeetCodeStats } from '@/pages/Index';
+import { LeetCodeStats } from '@/services/leetcodeService';
 
 interface ChartsSectionProps {
   stats: LeetCodeStats;
